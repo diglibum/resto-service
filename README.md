@@ -1,3 +1,3 @@
-# training project from the course JavaScript + React
+# Training project from the course JavaScript + React
 
 small restaurant menu app
