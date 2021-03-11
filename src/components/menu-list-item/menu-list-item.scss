@@ -1,19 +1,26 @@
+$category-images: (salads: "salad.svg",
+    pizza: "pizza.svg",
+    meat: "meat.svg");
+
 .menu {
+
     &__item {
         width: 350px;
         min-height: 400px;
         background-color: #fff;
-        box-shadow: 5px 5px 45px rgba(256,256,256,.1);
+        box-shadow: 5px 5px 45px rgba(256, 256, 256, .1);
         border-radius: 8px;
         padding: 20px;
         margin-right: 40px;
         margin-bottom: 40px;
     }
+
     &__title {
         font-size: 22px;
         margin-bottom: 20px;
         text-align: center;
     }
+
     &__img {
         width: calc(100% + 40px);
         transform: translateX(-20px);
@@ -21,14 +28,35 @@
         object-fit: cover;
         margin-bottom: 20px;
     }
-    &__category, &__price {
+
+    &__category,
+    &__price {
         font-size: 18px;
         font-weight: 300;
         margin-bottom: 10px;
+        display: flex;
+
         span {
             font-weight: 700;
+            margin-left: 5px;
+        }
+
+        &_img {
+            width: 15px;
+            height: 15px;
+            margin-top: 3px;
+        }
+
+        @each $category,
+        $image in $category-images {
+
+            .#{$category} {
+                background: url($image) no-repeat;
+                background-size: cover;
+            }
         }
     }
+
     &__btn {
         width: 150px;
         height: 40px;
